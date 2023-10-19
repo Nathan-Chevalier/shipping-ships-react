@@ -1,3 +1,3 @@
 export const HaulerList = () => {
-  return <></>;
+  return <>Hey Haulers</>;
 };
