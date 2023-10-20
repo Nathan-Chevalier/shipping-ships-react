@@ -17,7 +17,7 @@ export const ShipList = () => {
         headers: { "Content-Type": "application/json" },
       });
 
-      const updatedShips = await getAllShips();
+      const updatedShips = await getAllShips(); // ? useState page refresh after delete
       setShips(updatedShips);
     } catch (error) {
       console.error("Error deleting ship:", error);
@@ -26,15 +26,32 @@ export const ShipList = () => {
 
   return (
     <div className="flex flex-col self-center bg-gradient-to-r from-slate-700/30 to-slate-400/30 rounded-3xl scale-auto w-max justify-center items-center mt-12">
-      <div className="ship-view-container flex flex-col items-center justify-center h-2/6 my-4">
+      <div className="ship-view-container flex flex-col items-center justify-center my-4">
         <div className="ship-view-header"></div>
-        <div className="ship-view-list">
+        <div className="ship-view-list flex flex-col gap-2">
+          <div className="flex justify-apart items-center bg-cyan-700/90 px-12 py-2 mx-12 rounded-lg">
+            <span className="ship-name text-white font-bold text-xl  py-2 px-20">
+              SHIP NAME
+            </span>
+            <span className="hauler-name text-white font-bold text-xl  py-2 px-20">
+              HAULER NAME
+            </span>
+            <div className="header-empty text-white font-bold text-xl  py-2 px-20">
+              {" "}
+            </div>
+          </div>
           {ships.map((ship) => {
             const shipID = ship.id;
+
             return (
-              <div key={shipID}>
-                <span className="ship-name">{ship.name}</span>
-                <span className="hauler-name">{ship.hauler.name}</span>
+              <div
+                className="flex justify-between items-center bg-cyan-900/90 px-12 py-2 mx-12 rounded-lg"
+                key={shipID}
+              >
+                <span className="ship-name bg-fade">{ship.name}</span>
+                <span className="hauler-name mx-10 place-self-start bg-fade w-max">
+                  {ship.hauler.name}
+                </span>
                 <button
                   className="btn-delete"
                   onClick={() => {
