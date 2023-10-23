@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { getAllHaulers } from "../../services/fetchService";
+import { useNavigate } from "react-router-dom";
 
 export const HaulerList = () => {
+  const navigate = useNavigate();
   const [haulers, setHaulers] = useState([]);
 
   useEffect(() => {
@@ -19,7 +21,14 @@ export const HaulerList = () => {
             return (
               <div key={hauler.id} className="hauler-row flex justify-between">
                 <span className="hauler-name">{hauler.name}</span>
-                <button>EDIT BUTTON</button>
+                <button
+                  className="btn-edit"
+                  onClick={() => {
+                    navigate(`/haulingships/${hauler.id}`);
+                  }}
+                >
+                  EDIT
+                </button>
               </div>
             );
           })}
