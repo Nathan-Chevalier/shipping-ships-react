@@ -4,6 +4,7 @@ import { HaulerList } from "../components/lists/HaulerList";
 import { ShipList } from "../components/lists/ShipList";
 import { DockList } from "../components/lists/DockList";
 import { AllList } from "../components/lists/AllList";
+import { EditHauler } from "../components/forms/EditHauler";
 
 export const ApplicationViews = () => {
   return (
@@ -19,9 +20,9 @@ export const ApplicationViews = () => {
       >
         <Route index element={<AllList />} />
         <Route path="shippingships" element={<ShipList />} />
-        <Route path="haulingships" element={<HaulerList />}>
-          <Route path="edit" />
-        </Route>
+        <Route path="haulingships" element={<HaulerList />} />
+
+        <Route path="haulingships/:haulerId" element={<EditHauler />} />
         <Route path="docks" element={<DockList />} />
       </Route>
     </Routes>
