@@ -25,11 +25,11 @@ export const ShipList = () => {
   };
 
   return (
-    <div className="flex flex-col self-center bg-gradient-to-r from-slate-700/30 to-slate-400/30 rounded-3xl scale-auto w-max justify-center items-center mt-12">
+    <div className="flex flex-col self-center bg-gradient-to-r from-slate-700/70 to-slate-700/60 rounded-3xl scale-auto w-max justify-center items-center mt-12">
       <div className="ship-view-container flex flex-col items-center justify-center my-4">
         <div className="ship-view-header"></div>
         <div className="ship-view-list flex flex-col gap-2">
-          <div className="flex justify-apart items-center bg-cyan-700/90 px-12 py-2 mx-12 rounded-lg">
+          <div className="flex justify-apart items-center bg-cyan-700/90 bg-wave-a px-12 py-2 mx-12 rounded-lg">
             <span className="ship-name text-white font-bold text-xl  py-2 px-20">
               SHIP NAME
             </span>
@@ -48,8 +48,10 @@ export const ShipList = () => {
                 className="flex justify-between items-center bg-cyan-900/90 px-12 py-2 mx-12 rounded-lg"
                 key={shipID}
               >
-                <span className="ship-name bg-fade">{ship.name}</span>
-                <span className="hauler-name mx-10 place-self-start bg-fade w-max">
+                <span className="ship-name text-white bg-fade-b w-[210px]">
+                  {ship.name}
+                </span>
+                <span className="hauler-name text-white place-self-start bg-fade-b w-[300px]">
                   {ship.hauler.name}
                 </span>
                 <button

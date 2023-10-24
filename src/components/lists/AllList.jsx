@@ -28,7 +28,7 @@ export const AllList = () => {
         <div className="title-header text-white text-3xl bg-cyan-900 py-4 px-8 rounded-t-2xl border-cyan-200 border-4">
           Shipping Ships
         </div>
-        <div className="ships-list text-white columns-4 bg-cyan-500/70 border-cyan-200 border-4 p-5 rounded-3xl">
+        <div className="ships-list text-white columns-4 bg-opacity-10 border-cyan-200 border-4 p-5 rounded-3xl">
           {ships.map((ship) => {
             return (
               <div
