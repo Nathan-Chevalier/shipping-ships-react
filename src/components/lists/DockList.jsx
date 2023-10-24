@@ -19,14 +19,14 @@ export const DockList = () => {
             return (
               <div key={dock.id} className="dock-row flex-col">
                 <div className="dock-info flex justify-between items-center bg-cyan-900/90 px-12 py-2 mx-12 rounded-lg">
-                  <span className="bg-fade">{dock?.location}</span>
-                  <span className="bg-fade">{dock?.capacity}</span>
+                  <span className="">{dock?.location}</span>
+                  <span className="">{dock?.capacity}</span>
                 </div>
                 <ul className="haulers-list">
                   {dock?.haulers.map((hauler) => {
                     return (
                       <li key={hauler.id} className="hauler-row flex">
-                        <span className="list-item bg-fade">{hauler.name}</span>
+                        <span className="list-item">{hauler.name}</span>
                       </li>
                     );
                   })}
