@@ -19,10 +19,10 @@ export const HaulerList = () => {
         <div className="haulers-view-list flex flex-col gap-3">
           {haulers.map((hauler) => {
             return (
-              <div key={hauler.id} className="hauler-row flex justify-between w-[500px] rounded-2xl bg-cyan-700/80 py-4 px-12">
+              <div key={hauler.id} className="hauler-row flex justify-between w-[500px] rounded-2xl bg-wave-a py-4 px-12">
                 <span className="hauler-name bg-fade-b text-white">{hauler.name}</span>
                 <button
-                  className="btn-edit"
+                  className="btn-edit bg-fade-b"
                   onClick={() => {
                     navigate(`/haulingships/${hauler.id}`);
                   }}
